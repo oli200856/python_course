@@ -8,7 +8,8 @@ from random import choice
 url = "https://www.icanhazdadjoke.com/search"
 
 # Welcome screen
-print(colored(figlet_format("Dad Joke 300"), choice(["red", "green", "yellow", "blue", "magenta", "cyan", "white"])))
+print(colored(figlet_format("Dad Joke 3000"), choice(
+    ["red", "green", "yellow", "blue", "magenta", "cyan", "white"])))
 
 # Asking for user input
 print("Hi! Let me tell you a joke")
@@ -19,7 +20,7 @@ response = get(
     url,
     headers={"Accept": "application/json"},
     params={"term": user_input}
-    ).json()
+).json()
 
 num_jokes = response["total_jokes"]
 # Doing the logic, printing joke
@@ -29,5 +30,6 @@ elif num_jokes == 1:
     print(f"I've found one joke about {user_input}. Here it is:")
     print(response["results"][0]["joke"])
 else:
-    print(f"I've found {num_jokes} jokes about {user_input}. Here's one of them:")
+    print(
+        f"I've found {num_jokes} jokes about {user_input}. Here's one of them:")
     print(choice(response["results"])["joke"])
