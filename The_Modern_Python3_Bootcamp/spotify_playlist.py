@@ -10,7 +10,7 @@ playlist = {
             "Sonny", "Cher"], "album": None, "duration": 3.15}
     ]}
 
-sum = 0
-for song in playlist["songs"]:
-    sum += song["duration"]
-print(sum)
+# sum = 0
+# for song in playlist["songs"]:
+#     sum += song["duration"]
+# print(sum)
